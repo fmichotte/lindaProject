@@ -4,6 +4,12 @@ import java.util.Date;
 
 public class InputMessage {
 	
+	
+	public static int VALID_OK  		  = 0;
+	public static int VALID_ERROR_GENERAL = 99;
+	public static int VALID_ERROR_USER 	  = 100;
+	public static int VALID_ERROR_RATE 	  = 101;
+	
 	private String userId;
 	private String currencyFrom;
 	private String currencyTo;
@@ -71,5 +77,24 @@ public class InputMessage {
 		this.received = received;
 	}
 	
+	
+	
+	
+	public ErrorMessages validation(){
+		
+		if (userId.isEmpty())
+			return ErrorMessages.VALID_ERROR;
+		
+		
+		if ("000000".equals(userId))
+			return ErrorMessages.VALID_ERROR_USER;
+		
+		
+		if (rate >= 10)
+			return ErrorMessages.VALID_ERROR_RATE;
+		
+		
+		return ErrorMessages.VALID_OK;
+	}
 
 }
