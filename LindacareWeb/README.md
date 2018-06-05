@@ -27,6 +27,8 @@ MAVEN
 I had some conflict with myEclipse Jars, not compatible, spent some time to config everything
 
 
+GIT REPO :
+https://github.com/fmichotte/stupidProject
 
 
 REST POINT:
@@ -38,6 +40,12 @@ http://localhost:8080/LindacareWeb/
 
 
 
+STEP 3 
+Add validation on message
+
+if User = "000000" -> ERROR
+if Rate >= 10 -> ERROR
+ 
 
 
 
